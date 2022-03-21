@@ -1,0 +1,20 @@
+{
+    "PRIVATE": {
+        "t0": 1647891880,
+        "t1": 1647891980,
+        "day1Percent": 10,
+        "duration": 1500,
+        "beneficiaries": [
+            {
+                "name": "toto",
+                "address": "0xb06D7A9c63804AecC47C695b865e344970988a03",
+                "amount": 90
+            },
+                        {
+                "name": "toto2",
+                "address": "0x51569B67Bb57ED5923FCDdB3ca3adff560692C8d",
+                "amount": 70
+            }
+        ]
+    }
+}
