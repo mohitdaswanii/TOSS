@@ -35,6 +35,8 @@ contract TokenVestingFactory {
   /*
    * Public functions
    */
+   // it should be only owner or something, otherwise anybody can create ? do we need it or not ?
+   // can also include tokenTransfer in the same contract to keep track officially? instead of manual token sending ?
   /// @dev Allows verified creation of Token Vesting Contract
   /// Returns wallet address.
   function create(
