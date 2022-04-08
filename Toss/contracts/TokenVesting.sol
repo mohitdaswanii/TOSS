@@ -26,6 +26,7 @@ contract TokenVesting is Ownable {
   uint256 private duration; //duration of the release after t1
   uint256 private initialAmount;
 
+// why a mapping, are we gonna give multiple type of tokens ?
   mapping(address => uint256) private released;
 
   /**
@@ -70,6 +71,8 @@ contract TokenVesting is Ownable {
     // ownable call for ownership transfer
     transferOwnership(_owner);
   }
+  // add events for released so that offchain actors can keep a track of those
+  // also need a method or event to know that the contract is funded with the token amount specified and method to see if balance if available for it start releasing
 
   /**
    * @return the beneficiary of the tokens.
@@ -150,6 +153,7 @@ contract TokenVesting is Ownable {
    * @param token ERC20 token which is being vested
    */
   function _vestedAmount(IERC20 token) private view returns (uint256) {
+    // need current balance related checks to prevent overflow
     uint256 currentBalance = token.balanceOf(address(this));
     uint256 totalBalance = currentBalance + released[address(token)];
 
